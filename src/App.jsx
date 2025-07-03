@@ -29,23 +29,25 @@ function ScrollToSection() {
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
-  const location = useLocation();
-
-  const isMenuPage = location.pathname === "/menu";
 
   return (
     <div className="app-container">
       <Header />
       <SearchBar setQuery={setSearchQuery} />
 
-      {/* Conditionally show MenuContent or FilteredMenu on /menu route only */}
-      {isMenuPage && (
-        searchQuery ? <FilteredMenu query={searchQuery} /> : <MenuContent />
-      )}
-
       <Routes>
         <Route path="/" element={<MainContent />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route
+          path="/menu"
+          element={
+            searchQuery ? (
+              <FilteredMenu query={searchQuery} />
+            ) : (
+              <MenuContent />
+            )
+          }
+        />
         <Route path="/soup-salads" element={<ScrollToSection />} />
         <Route path="/tandoori-starters" element={<ScrollToSection />} />
         <Route path="/tandoori-mains" element={<ScrollToSection />} />
@@ -55,7 +57,6 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/menu" element={<MenuContent />} />
         <Route path="/customer-dashboard" element={<CustomerDashboard />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
       </Routes>

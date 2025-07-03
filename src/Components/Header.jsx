@@ -33,25 +33,23 @@ const Header = () => {
         <Link to="/">Home</Link>
 
         <div className="menu-dropdown">
-          <Link to="/menu" className="dropbtn">Menu ▼</Link>
-            <div className="dropdown-content">
-              <Link to="/soup-salads">Soup & Salads</Link>
-              <Link to="/tandoori-starters">Tandoori Starters</Link>
-              <Link to="/tandoori-mains">Tandoori Mains & Sizzlers</Link>
-              <Link to="/beverages">Beverages</Link>
-              <Link to="/sides">Sides</Link>
-                 <Link to="/ice-creams">Ice Creams</Link>
-            </div>
+          <button className="dropbtn" onClick={() => navigate("/menu")}>Menu ▼</button>
+          <div className="dropdown-content">
+            <Link to="/soup-salads">Soup & Salads</Link>
+            <Link to="/tandoori-starters">Tandoori Starters</Link>
+            <Link to="/tandoori-mains">Tandoori Mains & Sizzlers</Link>
+            <Link to="/beverages">Beverages</Link>
+            <Link to="/sides">Sides</Link>
+            <Link to="/ice-creams">Ice Creams</Link>
+          </div>
         </div>
 
-
-              <Link to="/about-us">About Us</Link>
-              <Link to="/contact">Contact</Link>
+        <Link to="/about-us">About Us</Link>
+        <Link to="/contact">Contact</Link>
       </nav>
 
       <div className="header-right">
         <Link to="/Cart" className="cart-icon">
-          
           <FaShoppingCart />
         </Link>
 
@@ -77,4 +75,3 @@ const Header = () => {
 };
 
 export default Header;
-
