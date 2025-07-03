@@ -50,10 +50,17 @@
 }
 
 .cart-icon {
-  font-size: 1.3rem;
-  color: black;
-  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
 }
+.cart-icon:hover {
+  color: orange;
+}
+
+
 
 /* Login button */
 .login-btn,

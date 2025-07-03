@@ -51,7 +51,7 @@ const Header = () => {
 
       <div className="header-right">
         <Link to="/Cart" className="cart-icon">
-          🛒 Cart
+          
           <FaShoppingCart />
         </Link>
 
